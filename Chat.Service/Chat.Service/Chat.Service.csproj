@@ -129,6 +129,7 @@
   <ItemGroup>
     <Compile Include="APIControllers\AdvertiseController.cs" />
     <Compile Include="APIControllers\BaseAPIController.cs" />
+    <Compile Include="APIControllers\ChatController.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -149,7 +150,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Entity\Advertise.cs">
       <DependentUpon>ChatEdmx.tt</DependentUpon>
     </Compile>
@@ -253,16 +253,17 @@
       <DependentUpon>ChatEdmx.tt</DependentUpon>
     </Compile>
     <Compile Include="Extensions\AdvertiseExtension.cs" />
+    <Compile Include="Filters\HandleAPIExceptionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Common\BaseRequestModel.cs" />
     <Compile Include="Models\Common\ErrorCode.cs" />
     <Compile Include="Models\Common\FailureResponse.cs" />
     <Compile Include="Models\Common\Response.cs" />
     <Compile Include="Models\Common\ServiceResponse.cs" />
+    <Compile Include="Models\Request\ChatRequest.cs" />
     <Compile Include="Models\Request\GetAdvertiseRequestModel.cs" />
     <Compile Include="Models\Response\GetAdvertiseResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -21,5 +21,11 @@ namespace Chat.Service.Models.Common
         {
             
         }
+
+        public FailureResponse(ErrorCode _errorCode, string _errorMessage)
+        {
+            ErrorCode = _errorCode;
+            Error = _errorMessage;
+        }
     }
 }

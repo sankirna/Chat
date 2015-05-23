@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using Chat.Service.Entity;
+using Chat.Service.Filters;
 using Chat.Service.Models.Common;
 using ServicePlace.Utils.Enums;
 
 namespace Chat.Service.APIControllers
 {
+    [HandleApiException]
     public class BaseApiController : ApiController
     {
         #region "Protected Member(s)"

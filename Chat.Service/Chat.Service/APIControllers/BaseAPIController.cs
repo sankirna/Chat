@@ -68,6 +68,26 @@ namespace Chat.Service.APIControllers
             return ServiceResponse(failureResponse, false);
         }
 
+
+        /// <summary>
+        /// Process exception generated during function process or user generated error process
+        /// </summary>
+        /// <param name="errorCode">Error code</param>
+        /// <param name="errorMessage">Error message</param>
+        /// <returns>Exception string</returns>
+        protected object FailureResponse(ErrorCode errorCode, string errorMessage)
+        {
+            //log
+            //LogUtility.Debug(LogUtility.GetLogMessageString(actionName, controllerName
+            //                                                   , new KeyValuePair<string, string>("Success", "false")
+            //                                                   , new KeyValuePair<string, string>(Convert.ToString(errorCode), errorMessage))
+            //                                                   , this);
+
+            FailureResponse failureResponse = new FailureResponse(errorCode, errorMessage);
+          return  ServiceResponse(failureResponse, false);
+        }
+
+
         /// <summary>
         /// Gives service success response
         /// </summary>

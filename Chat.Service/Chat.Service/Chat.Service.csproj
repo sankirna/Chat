@@ -276,6 +276,7 @@
     <Compile Include="Models\Enums\ChatStatus.cs" />
     <Compile Include="Models\Enums\GroupMembers.cs" />
     <Compile Include="Models\Enums\MessageType.cs" />
+    <Compile Include="Models\Request\AppInstallRequestModel.cs" />
     <Compile Include="Models\Request\ChatListRequestModel.cs" />
     <Compile Include="Models\Request\ChatRequest.cs" />
     <Compile Include="Models\Request\CreateChatRequest.cs" />
@@ -284,6 +285,7 @@
     <Compile Include="Models\Request\GroupRequestModel.cs" />
     <Compile Include="Models\Request\MemberApprovalRequestModel.cs" />
     <Compile Include="Models\Request\RegisterRequestModel.cs" />
+    <Compile Include="Models\Response\AppInstallResponseModel.cs" />
     <Compile Include="Models\Response\ChatResponseModel.cs" />
     <Compile Include="Models\Response\GetAdvertiseResponseModel.cs" />
     <Compile Include="Models\Response\GroupMemberResponseModel.cs" />

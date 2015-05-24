@@ -9,7 +9,7 @@ namespace Chat.Service.Models.Request
     public class CreateChatRequest : BaseRequestModel
     {
         public int SenderId { get; set; }
-        public string RecieverMobileNumber { get; set; }
+        public string ReceiverMobileNumber { get; set; }
         public string Message { get; set; }
     }
 }

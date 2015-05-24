@@ -16,13 +16,13 @@ namespace Chat.Service.Models.Request
         public string GIplmg { get; set; }
         public int GrpAdmin { get; set; }
         public MemberRequestModel GroupMemberModel { get; set; }
-        
+
     }
 
     public class MemberRequestModel : BaseRequestModel
     {
-        public List<int> MembersId { get; set; }
+        public List<string> MobileNumbers { get; set; }
         public int GroupId { get; set; }
-     
+
     }
 }

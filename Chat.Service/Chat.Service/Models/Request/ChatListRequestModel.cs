@@ -8,8 +8,8 @@ namespace Chat.Service.Models.Request
 {
     public class ChatListRequestModel : BaseRequestModel
     {
-        public int ReciverId { get; set; }
-        public string SenderMobleNjmber { get; set; }
+        public int SenderId { get; set; }
+        public string ReceiverMobileNumber { get; set; }
         public int PageNo { get; set; }
         public int PageSize { get; set; }
         public string StartDate { get; set; }

@@ -24,7 +24,7 @@ namespace Chat.Service.APIControllers
 
         public object CreateChat(CreateChatRequest model)
         {
-            User_Master reciever = dbContext.User_Master.FirstOrDefault(x => x.MobileNo == model.RecieverMobileNumber);
+            User_Master reciever = dbContext.User_Master.FirstOrDefault(x => x.MobileNo == model.ReceiverMobileNumber);
             if (reciever == null)
             {
                 return FailureResponse(ErrorCode.ERROR100, "No Reciever Exists");
@@ -47,16 +47,17 @@ namespace Chat.Service.APIControllers
 
         public object ChatList(ChatListRequestModel model)
         {
-            User_Master sender = dbContext.User_Master.FirstOrDefault(x => x.MobileNo == model.SenderMobleNjmber);
-            if (sender == null)
+            User_Master reciever = dbContext.User_Master.FirstOrDefault(x => x.MobileNo == model.ReceiverMobileNumber);
+            if (reciever == null)
             {
                 return FailureResponse(ErrorCode.ERROR100, "No Reciever Exists");
             }
+
             DateTime startDate = model.StartDate.ToDateTime();
             DateTime endDate = model.EndDate.ToDateTime();
 
-            var chats = dbContext.ChatTabs.Where(x => x.SenderId == sender.UserID
-                                                            && x.ReceiverID == model.ReciverId
+            var chats = dbContext.ChatTabs.Where(x => x.ReceiverID == reciever.UserID
+                                                            && x.SenderId == model.SenderId
                                                             )
                                                             .OrderByDescending(x => x.DateCreated)
                                                             .Skip((model.PageNo - 1) * model.PageSize)

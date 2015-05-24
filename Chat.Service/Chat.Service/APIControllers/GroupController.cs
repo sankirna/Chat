@@ -32,12 +32,18 @@ namespace Chat.Service.APIControllers
         }
 
 
-        public object GroupMembers(MemberRequestModel modelGroupMember)
+        public object GroupMembers(MemberRequestModel model)
         {
-            foreach (int grpMember in modelGroupMember.MembersId)
+            List<int> memberIds =
+                dbContext.User_Master.Where(x => model.MobileNumbers.Contains(x.MobileNo))
+                                                .ToList()
+                                                .Select(x => x.UserID)
+                                                .ToList();
+
+            foreach (int grpMember in memberIds)
             {
                 Group_Member groupMember = new Group_Member();
-                groupMember.GrpID = modelGroupMember.GroupId;
+                groupMember.GrpID = model.GroupId;
                 groupMember.GrpMemid = grpMember;
                 groupMember.Status = (int?)MemberStatus.UnApproved;
                 groupMember.CreatedDate = DateTime.Now;

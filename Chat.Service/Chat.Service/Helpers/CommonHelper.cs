@@ -2,6 +2,8 @@
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Chat.Service.Helpers
 {
@@ -163,6 +165,25 @@ namespace Chat.Service.Helpers
             {
             }
             return myDateTime;
+        }
+
+        public static string GetRandomKey(int len)
+        {
+            int maxSize = len;
+            char[] chars = new char[30];
+            string a;
+            a = "1234567890";
+            chars = a.ToCharArray();
+            int size = maxSize;
+            byte[] data = new byte[1];
+            RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();
+            crypto.GetNonZeroBytes(data);
+            size = maxSize;
+            data = new byte[size];
+            crypto.GetNonZeroBytes(data);
+            StringBuilder result = new StringBuilder(size);
+            foreach (byte b in data) { result.Append(chars[b % (chars.Length)]); }
+            return result.ToString();
         }
     }
 }

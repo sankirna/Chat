@@ -130,6 +130,9 @@
     <Compile Include="APIControllers\AdvertiseController.cs" />
     <Compile Include="APIControllers\BaseAPIController.cs" />
     <Compile Include="APIControllers\ChatController.cs" />
+    <Compile Include="APIControllers\GroupController.cs" />
+    <Compile Include="APIControllers\GroupMemberController.cs" />
+    <Compile Include="APIControllers\MemberApprovelController.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -253,19 +256,37 @@
       <DependentUpon>ChatEdmx.tt</DependentUpon>
     </Compile>
     <Compile Include="Extensions\AdvertiseExtension.cs" />
+    <Compile Include="Extensions\ChatExtension.cs" />
+    <Compile Include="Extensions\GroupExtension.cs" />
+    <Compile Include="Extensions\ImageExtension.cs" />
+    <Compile Include="Extensions\MemberApprovalExtension.cs" />
     <Compile Include="Filters\HandleAPIExceptionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CommonHelper.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\MyMultipartFormDataStreamProvider.cs" />
     <Compile Include="Models\Common\BaseRequestModel.cs" />
     <Compile Include="Models\Common\ErrorCode.cs" />
     <Compile Include="Models\Common\FailureResponse.cs" />
     <Compile Include="Models\Common\Response.cs" />
     <Compile Include="Models\Common\ServiceResponse.cs" />
+    <Compile Include="Models\Enums\ChatStatus.cs" />
+    <Compile Include="Models\Enums\GroupMembers.cs" />
+    <Compile Include="Models\Enums\MessageType.cs" />
+    <Compile Include="Models\Request\ChatListRequestModel.cs" />
     <Compile Include="Models\Request\ChatRequest.cs" />
+    <Compile Include="Models\Request\CreateChatRequest.cs" />
     <Compile Include="Models\Request\GetAdvertiseRequestModel.cs" />
+    <Compile Include="Models\Request\GroupMemberRequestModel.cs" />
+    <Compile Include="Models\Request\GroupRequestModel.cs" />
+    <Compile Include="Models\Request\MemberApprovalRequestModel.cs" />
+    <Compile Include="Models\Response\ChatResponseModel.cs" />
     <Compile Include="Models\Response\GetAdvertiseResponseModel.cs" />
+    <Compile Include="Models\Response\GroupMemberResponseModel.cs" />
+    <Compile Include="Models\Response\GroupResponseModel.cs" />
+    <Compile Include="Models\Response\MemberApprovalResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,15 @@ namespace Chat.Service
         {
             Mapper.CreateMap<Advertise, GetAdvertiseResponseModel>();
 
+            Mapper.CreateMap<ChatTab, ChatResponseModel>();
+
+            Mapper.CreateMap<GroupResponseModel, Group_Master>();
+
+            Mapper.CreateMap<GroupMemberResponseModel, Group_Member>();
+
+
+            Mapper.CreateMap<Group_Member, MemberApprovalResponseModel>();
+
             //// Map City Entity to City Model            
             //Mapper.CreateMap<Entity.City, BusinessModel.CityInfo>();
             //// Map City Model to City Entity

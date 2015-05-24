@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ChatModelStoreContainer">
           <EntitySet Name="Advertise" EntityType="ChatModel.Store.Advertise" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Advertisement_Cat" EntityType="ChatModel.Store.Advertisement_Cat" store:Type="Tables" Schema="dbo" />
@@ -178,7 +178,7 @@
           <Key>
             <PropertyRef Name="GrpMemtabid" />
           </Key>
-          <Property Name="GrpMemtabid" Type="int" Nullable="false" />
+          <Property Name="GrpMemtabid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="GrpID" Type="int" />
           <Property Name="GrpMemid" Type="int" />
           <Property Name="Status" Type="int" />
@@ -500,8 +500,7 @@
           <Parameter Name="UsID" Type="int" Mode="In" />
           <Parameter Name="OP" Type="int" Mode="In" />
         </Function>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ChatModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

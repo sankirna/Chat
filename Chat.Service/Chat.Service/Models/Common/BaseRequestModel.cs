@@ -7,5 +7,6 @@ namespace Chat.Service.Models.Common
 {
     public class BaseRequestModel
     {
+        public string IP { get; set; }
     }
 }

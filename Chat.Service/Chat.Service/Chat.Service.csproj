@@ -133,6 +133,7 @@
     <Compile Include="APIControllers\GroupController.cs" />
     <Compile Include="APIControllers\GroupMemberController.cs" />
     <Compile Include="APIControllers\MemberApprovelController.cs" />
+    <Compile Include="APIControllers\UserController.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -282,11 +283,13 @@
     <Compile Include="Models\Request\GroupMemberRequestModel.cs" />
     <Compile Include="Models\Request\GroupRequestModel.cs" />
     <Compile Include="Models\Request\MemberApprovalRequestModel.cs" />
+    <Compile Include="Models\Request\RegisterRequestModel.cs" />
     <Compile Include="Models\Response\ChatResponseModel.cs" />
     <Compile Include="Models\Response\GetAdvertiseResponseModel.cs" />
     <Compile Include="Models\Response\GroupMemberResponseModel.cs" />
     <Compile Include="Models\Response\GroupResponseModel.cs" />
     <Compile Include="Models\Response\MemberApprovalResponseModel.cs" />
+    <Compile Include="Models\Response\RegistrationResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

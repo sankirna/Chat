@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChatModelStoreContainer" CdmEntityContainer="ChatContext">
+    <EntitySetMapping Name="Advertises">
+      <EntityTypeMapping TypeName="ChatModel.Advertise">
+        <MappingFragment StoreEntitySet="Advertise">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Second" ColumnName="Second" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisement_Cat">
+      <EntityTypeMapping TypeName="ChatModel.Advertisement_Cat">
+        <MappingFragment StoreEntitySet="Advertisement_Cat">
+          <ScalarProperty Name="Ad_Cat_Id" ColumnName="Ad_Cat_Id" />
+          <ScalarProperty Name="Ad_Cat_Name" ColumnName="Ad_Cat_Name" />
+          <ScalarProperty Name="Ad_Cat_Reason" ColumnName="Ad_Cat_Reason" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChatTabs">
+      <EntityTypeMapping TypeName="ChatModel.ChatTab">
+        <MappingFragment StoreEntitySet="ChatTab">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+          <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="AudioURL" ColumnName="AudioURL" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country_State_city">
+      <EntityTypeMapping TypeName="ChatModel.Country_State_city">
+        <MappingFragment StoreEntitySet="Country_State_city">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="L1" ColumnName="L1" />
+          <ScalarProperty Name="L2" ColumnName="L2" />
+          <ScalarProperty Name="L3" ColumnName="L3" />
+          <ScalarProperty Name="L4" ColumnName="L4" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_Master">
+      <EntityTypeMapping TypeName="ChatModel.Department_Master">
+        <MappingFragment StoreEntitySet="Department_Master">
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="Datemodify" ColumnName="Datemodify" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friend_Coonnect_Tab">
+      <EntityTypeMapping TypeName="ChatModel.Friend_Coonnect_Tab">
+        <MappingFragment StoreEntitySet="Friend_Coonnect_Tab">
+          <ScalarProperty Name="FCId" ColumnName="FCId" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="G_CompanyMaster">
+      <EntityTypeMapping TypeName="ChatModel.G_CompanyMaster">
+        <MappingFragment StoreEntitySet="G_CompanyMaster">
+          <ScalarProperty Name="CoID" ColumnName="CoID" />
+          <ScalarProperty Name="CoName" ColumnName="CoName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+          <ScalarProperty Name="SrvTaxNo" ColumnName="SrvTaxNo" />
+          <ScalarProperty Name="TANNo" ColumnName="TANNo" />
+          <ScalarProperty Name="PAN" ColumnName="PAN" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="PanDate" ColumnName="PanDate" />
+          <ScalarProperty Name="PanRenewDate" ColumnName="PanRenewDate" />
+          <ScalarProperty Name="PanCircle" ColumnName="PanCircle" />
+          <ScalarProperty Name="TDSNo" ColumnName="TDSNo" />
+          <ScalarProperty Name="TDSDate" ColumnName="TDSDate" />
+          <ScalarProperty Name="TdsRenewDate" ColumnName="TdsRenewDate" />
+          <ScalarProperty Name="TdsCircle" ColumnName="TdsCircle" />
+          <ScalarProperty Name="StNO" ColumnName="StNO" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="StRenewDate" ColumnName="StRenewDate" />
+          <ScalarProperty Name="CstNo" ColumnName="CstNo" />
+          <ScalarProperty Name="CstDate" ColumnName="CstDate" />
+          <ScalarProperty Name="CstRenewDate" ColumnName="CstRenewDate" />
+          <ScalarProperty Name="ExciseNo" ColumnName="ExciseNo" />
+          <ScalarProperty Name="ExciseDate" ColumnName="ExciseDate" />
+          <ScalarProperty Name="ExciseRenewDate" ColumnName="ExciseRenewDate" />
+          <ScalarProperty Name="EccNo" ColumnName="EccNo" />
+          <ScalarProperty Name="EccDate" ColumnName="EccDate" />
+          <ScalarProperty Name="EccRenewDate" ColumnName="EccRenewDate" />
+          <ScalarProperty Name="VatDate" ColumnName="VatDate" />
+          <ScalarProperty Name="VatRenewDate" ColumnName="VatRenewDate" />
+          <ScalarProperty Name="CompanyRagNo" ColumnName="CompanyRagNo" />
+          <ScalarProperty Name="LicenceNo" ColumnName="LicenceNo" />
+          <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+          <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="CIID" ColumnName="CIID" />
+          <ScalarProperty Name="VatNo1" ColumnName="VatNo1" />
+          <ScalarProperty Name="OtherRegName1" ColumnName="OtherRegName1" />
+          <ScalarProperty Name="OtherRegNo1" ColumnName="OtherRegNo1" />
+          <ScalarProperty Name="OtherRegName2" ColumnName="OtherRegName2" />
+          <ScalarProperty Name="OtherRegNo2" ColumnName="OtherRegNo2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Master">
+      <EntityTypeMapping TypeName="ChatModel.Group_Master">
+        <MappingFragment StoreEntitySet="Group_Master">
+          <ScalarProperty Name="GrpID" ColumnName="GrpID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GIplmg" ColumnName="GIplmg" />
+          <ScalarProperty Name="GrpAdmin" ColumnName="GrpAdmin" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Member">
+      <EntityTypeMapping TypeName="ChatModel.Group_Member">
+        <MappingFragment StoreEntitySet="Group_Member">
+          <ScalarProperty Name="GrpMemtabid" ColumnName="GrpMemtabid" />
+          <ScalarProperty Name="GrpID" ColumnName="GrpID" />
+          <ScalarProperty Name="GrpMemid" ColumnName="GrpMemid" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Message">
+      <EntityTypeMapping TypeName="ChatModel.Group_Message">
+        <MappingFragment StoreEntitySet="Group_Message">
+          <ScalarProperty Name="GroMsgld" ColumnName="GroMsgld" />
+          <ScalarProperty Name="GrpID" ColumnName="GrpID" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="AudioURL" ColumnName="AudioURL" />
+          <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+          <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invite_User">
+      <EntityTypeMapping TypeName="ChatModel.Invite_User">
+        <MappingFragment StoreEntitySet="Invite_User">
+          <ScalarProperty Name="InvUser" ColumnName="InvUser" />
+          <ScalarProperty Name="FromUser" ColumnName="FromUser" />
+          <ScalarProperty Name="ToMobile" ColumnName="ToMobile" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meeting_Master">
+      <EntityTypeMapping TypeName="ChatModel.Meeting_Master">
+        <MappingFragment StoreEntitySet="Meeting_Master">
+          <ScalarProperty Name="MetID" ColumnName="MetID" />
+          <ScalarProperty Name="MeetingTitle" ColumnName="MeetingTitle" />
+          <ScalarProperty Name="MeetingPlace" ColumnName="MeetingPlace" />
+          <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+          <ScalarProperty Name="MeetingTime" ColumnName="MeetingTime" />
+          <ScalarProperty Name="MeetingGenID" ColumnName="MeetingGenID" />
+          <ScalarProperty Name="MeetingType" ColumnName="MeetingType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Meeting_User">
+      <EntityTypeMapping TypeName="ChatModel.Meeting_User">
+        <MappingFragment StoreEntitySet="Meeting_User">
+          <ScalarProperty Name="MetTabId" ColumnName="MetTabId" />
+          <ScalarProperty Name="MetID" ColumnName="MetID" />
+          <ScalarProperty Name="MetUID" ColumnName="MetUID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notification_Tab">
+      <EntityTypeMapping TypeName="ChatModel.Notification_Tab">
+        <MappingFragment StoreEntitySet="Notification_Tab">
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="Notedet" ColumnName="Notedet" />
+          <ScalarProperty Name="NotifyTo" ColumnName="NotifyTo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opinion_Metting_Master">
+      <EntityTypeMapping TypeName="ChatModel.Opinion_Metting_Master">
+        <MappingFragment StoreEntitySet="Opinion_Metting_Master">
+          <ScalarProperty Name="Opinionld" ColumnName="Opinionld" />
+          <ScalarProperty Name="MetID" ColumnName="MetID" />
+          <ScalarProperty Name="OpinionText" ColumnName="OpinionText" />
+          <ScalarProperty Name="OpinionType" ColumnName="OpinionType" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="ChatModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="RegID" ColumnName="RegID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Moblie" ColumnName="Moblie" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DepID" ColumnName="DepID" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="AboutSelf" ColumnName="AboutSelf" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="DateModify" ColumnName="DateModify" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Us_Id" ColumnName="Us_Id" />
+          <ScalarProperty Name="LastActDate" ColumnName="LastActDate" />
+          <ScalarProperty Name="MobId" ColumnName="MobId" />
+          <ScalarProperty Name="MobType" ColumnName="MobType" />
+          <ScalarProperty Name="Otp" ColumnName="Otp" />
+          <ScalarProperty Name="OtpFlag" ColumnName="OtpFlag" />
+          <ScalarProperty Name="OtpDate" ColumnName="OtpDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SplashAdvMaster_1">
+      <EntityTypeMapping TypeName="ChatModel.SplashAdvMaster_1">
+        <MappingFragment StoreEntitySet="SplashAdvMaster_1">
+          <ScalarProperty Name="AdvID" ColumnName="AdvID" />
+          <ScalarProperty Name="AdvTitle" ColumnName="AdvTitle" />
+          <ScalarProperty Name="AdvImage" ColumnName="AdvImage" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SplashAdvMaster_2">
+      <EntityTypeMapping TypeName="ChatModel.SplashAdvMaster_2">
+        <MappingFragment StoreEntitySet="SplashAdvMaster_2">
+          <ScalarProperty Name="Advld" ColumnName="Advld" />
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="DateForm" ColumnName="DateForm" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="RepTime" ColumnName="RepTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="DateModify" ColumnName="DateModify" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Category">
+      <EntityTypeMapping TypeName="ChatModel.User_Category">
+        <MappingFragment StoreEntitySet="User_Category">
+          <ScalarProperty Name="CoId" ColumnName="CoId" />
+          <ScalarProperty Name="UCatID" ColumnName="UCatID" />
+          <ScalarProperty Name="UCatName" ColumnName="UCatName" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Master">
+      <EntityTypeMapping TypeName="ChatModel.User_Master">
+        <MappingFragment StoreEntitySet="User_Master">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+          <ScalarProperty Name="OTPStatus" ColumnName="OTPStatus" />
+          <ScalarProperty Name="OPTDate" ColumnName="OPTDate" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="CoID" ColumnName="CoID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+          <ScalarProperty Name="Lic_ID" ColumnName="Lic_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendor_Master">
+      <EntityTypeMapping TypeName="ChatModel.Vendor_Master">
+        <MappingFragment StoreEntitySet="Vendor_Master">
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="V_Name" ColumnName="V_Name" />
+          <ScalarProperty Name="VOAddress" ColumnName="VOAddress" />
+          <ScalarProperty Name="VOGLId" ColumnName="VOGLId" />
+          <ScalarProperty Name="VOPinCode" ColumnName="VOPinCode" />
+          <ScalarProperty Name="VOPhone1" ColumnName="VOPhone1" />
+          <ScalarProperty Name="VOPhone2" ColumnName="VOPhone2" />
+          <ScalarProperty Name="VFAddress" ColumnName="VFAddress" />
+          <ScalarProperty Name="VFGLId" ColumnName="VFGLId" />
+          <ScalarProperty Name="VFPinCode" ColumnName="VFPinCode" />
+          <ScalarProperty Name="VFPhone1" ColumnName="VFPhone1" />
+          <ScalarProperty Name="VFPhone2" ColumnName="VFPhone2" />
+          <ScalarProperty Name="VBankName" ColumnName="VBankName" />
+          <ScalarProperty Name="VBankIFSC" ColumnName="VBankIFSC" />
+          <ScalarProperty Name="VBankBranch" ColumnName="VBankBranch" />
+          <ScalarProperty Name="VBankAcNo" ColumnName="VBankAcNo" />
+          <ScalarProperty Name="VEMailId" ColumnName="VEMailId" />
+          <ScalarProperty Name="VContactPerson" ColumnName="VContactPerson" />
+          <ScalarProperty Name="VCDOB" ColumnName="VCDOB" />
+          <ScalarProperty Name="VCMobile" ColumnName="VCMobile" />
+          <ScalarProperty Name="VSrTaxNo" ColumnName="VSrTaxNo" />
+          <ScalarProperty Name="VSrTaxDate" ColumnName="VSrTaxDate" />
+          <ScalarProperty Name="VStNo" ColumnName="VStNo" />
+          <ScalarProperty Name="VStDate" ColumnName="VStDate" />
+          <ScalarProperty Name="VCstNo" ColumnName="VCstNo" />
+          <ScalarProperty Name="VCstDate" ColumnName="VCstDate" />
+          <ScalarProperty Name="VRegNo" ColumnName="VRegNo" />
+          <ScalarProperty Name="VRegDate" ColumnName="VRegDate" />
+          <ScalarProperty Name="VPanNo" ColumnName="VPanNo" />
+          <ScalarProperty Name="VPanDate" ColumnName="VPanDate" />
+          <ScalarProperty Name="VatNo" ColumnName="VatNo" />
+          <ScalarProperty Name="VatDate" ColumnName="VatDate" />
+          <ScalarProperty Name="VCrLimit" ColumnName="VCrLimit" />
+          <ScalarProperty Name="VCrDays" ColumnName="VCrDays" />
+          <ScalarProperty Name="VStatus" ColumnName="VStatus" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Advertisement" FunctionName="ChatModel.Store.Advertisement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChatModel.Advertisement_Result">
+          <ScalarProperty Name="Ad_Cat_Id" ColumnName="Ad_Cat_Id" />
+          <ScalarProperty Name="Ad_Cat_Name" ColumnName="Ad_Cat_Name" />
+          <ScalarProperty Name="Ad_Cat_Reason" ColumnName="Ad_Cat_Reason" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Depatment" FunctionName="ChatModel.Store.Depatment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChatModel.Depatment_Result">
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="Datemodify" ColumnName="Datemodify" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_UserCatergory1" FunctionName="ChatModel.Store.sp_A_UserCatergory1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChatModel.sp_A_UserCatergory1_Result">
+          <ScalarProperty Name="CoId" ColumnName="CoId" />
+          <ScalarProperty Name="UCatID" ColumnName="UCatID" />
+          <ScalarProperty Name="UCatName" ColumnName="UCatName" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sp_AdminUserMaster" FunctionName="ChatModel.Store.Sp_AdminUserMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChatModel.Sp_AdminUserMaster_Result">
+          <ScalarProperty Name="UCatName" ColumnName="UCatName" />
+          <ScalarProperty Name="CoID" ColumnName="CoID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+          <ScalarProperty Name="Lic_ID" ColumnName="Lic_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UserMaster" FunctionName="ChatModel.Store.UserMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ChatModel.UserMaster_Result">
+          <ScalarProperty Name="CoID" ColumnName="CoID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CatID" ColumnName="CatID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+          <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+          <ScalarProperty Name="UsID" ColumnName="UsID" />
+          <ScalarProperty Name="Lic_ID" ColumnName="Lic_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

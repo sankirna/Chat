@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ChatModelStoreContainer">
+    <EntitySet Name="Advertise" EntityType="ChatModel.Store.Advertise" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Advertisement_Cat" EntityType="ChatModel.Store.Advertisement_Cat" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChatTab" EntityType="ChatModel.Store.ChatTab" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Country_State_city" EntityType="ChatModel.Store.Country_State_city" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Department_Master" EntityType="ChatModel.Store.Department_Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Friend_Coonnect_Tab" EntityType="ChatModel.Store.Friend_Coonnect_Tab" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="G_CompanyMaster" EntityType="ChatModel.Store.G_CompanyMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group_Master" EntityType="ChatModel.Store.Group_Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group_Member" EntityType="ChatModel.Store.Group_Member" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Group_Message" EntityType="ChatModel.Store.Group_Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invite_User" EntityType="ChatModel.Store.Invite_User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Meeting_Master" EntityType="ChatModel.Store.Meeting_Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Meeting_User" EntityType="ChatModel.Store.Meeting_User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notification_Tab" EntityType="ChatModel.Store.Notification_Tab" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Opinion_Metting_Master" EntityType="ChatModel.Store.Opinion_Metting_Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Registration" EntityType="ChatModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SplashAdvMaster_1" EntityType="ChatModel.Store.SplashAdvMaster_1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SplashAdvMaster_2" EntityType="ChatModel.Store.SplashAdvMaster_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User_Category" EntityType="ChatModel.Store.User_Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User_Master" EntityType="ChatModel.Store.User_Master" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendor_Master" EntityType="ChatModel.Store.Vendor_Master" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Advertise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="Second" Type="int" />
+    <Property Name="Deleted" Type="bit" Nullable="false" />
+    <Property Name="FromDate" Type="datetime" Nullable="false" />
+    <Property Name="ToDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Advertisement_Cat">
+    <Key>
+      <PropertyRef Name="Ad_Cat_Id" />
+    </Key>
+    <Property Name="Ad_Cat_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Ad_Cat_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ad_Cat_Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dttm" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ChatTab">
+    <Key>
+      <PropertyRef Name="ChatId" />
+    </Key>
+    <Property Name="ChatId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SenderId" Type="int" />
+    <Property Name="ReceiverID" Type="int" />
+    <Property Name="Message" Type="nvarchar" MaxLength="50" />
+    <Property Name="AudioURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="VideoURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="MsgType" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Country_State_city">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="L1" Type="nvarchar" MaxLength="50" />
+    <Property Name="L2" Type="nvarchar" MaxLength="50" />
+    <Property Name="L3" Type="nvarchar" MaxLength="50" />
+    <Property Name="L4" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="District" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department_Master">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="Datemodify" Type="datetime" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Friend_Coonnect_Tab">
+    <Key>
+      <PropertyRef Name="FCId" />
+    </Key>
+    <Property Name="FCId" Type="int" Nullable="false" />
+    <Property Name="SenderID" Type="int" />
+    <Property Name="ReceiverID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="G_CompanyMaster">
+    <Key>
+      <PropertyRef Name="CoID" />
+    </Key>
+    <Property Name="CoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CoName" Type="varchar" MaxLength="35" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="ContactNo" Type="varchar" MaxLength="10" />
+    <Property Name="ContactPerson" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="25" />
+    <Property Name="URL" Type="varchar" MaxLength="25" />
+    <Property Name="RegNo" Type="varchar" MaxLength="20" />
+    <Property Name="SrvTaxNo" Type="varchar" MaxLength="20" />
+    <Property Name="TANNo" Type="varchar" MaxLength="20" />
+    <Property Name="PAN" Type="varchar" MaxLength="20" />
+    <Property Name="Logo" Type="varchar(max)" />
+    <Property Name="UsID" Type="int" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="ChkSum" Type="varchar" MaxLength="100" />
+    <Property Name="Dttm" Type="datetime" />
+    <Property Name="PanDate" Type="datetime" />
+    <Property Name="PanRenewDate" Type="datetime" />
+    <Property Name="PanCircle" Type="varchar" MaxLength="20" />
+    <Property Name="TDSNo" Type="varchar" MaxLength="20" />
+    <Property Name="TDSDate" Type="datetime" />
+    <Property Name="TdsRenewDate" Type="datetime" />
+    <Property Name="TdsCircle" Type="varchar" MaxLength="20" />
+    <Property Name="StNO" Type="varchar" MaxLength="20" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="StRenewDate" Type="datetime" />
+    <Property Name="CstNo" Type="varchar" MaxLength="20" />
+    <Property Name="CstDate" Type="datetime" />
+    <Property Name="CstRenewDate" Type="datetime" />
+    <Property Name="ExciseNo" Type="varchar" MaxLength="20" />
+    <Property Name="ExciseDate" Type="datetime" />
+    <Property Name="ExciseRenewDate" Type="datetime" />
+    <Property Name="EccNo" Type="varchar" MaxLength="20" />
+    <Property Name="EccDate" Type="datetime" />
+    <Property Name="EccRenewDate" Type="datetime" />
+    <Property Name="VatDate" Type="datetime" />
+    <Property Name="VatRenewDate" Type="datetime" />
+    <Property Name="CompanyRagNo" Type="varchar" MaxLength="20" />
+    <Property Name="LicenceNo" Type="varchar" MaxLength="20" />
+    <Property Name="CompanyType" Type="varchar" MaxLength="20" />
+    <Property Name="BusinessType" Type="varchar" MaxLength="20" />
+    <Property Name="PinCode" Type="varchar" MaxLength="6" />
+    <Property Name="CID" Type="varchar" MaxLength="20" />
+    <Property Name="SID" Type="varchar" MaxLength="20" />
+    <Property Name="CIID" Type="varchar" MaxLength="20" />
+    <Property Name="VatNo1" Type="varchar" MaxLength="30" />
+    <Property Name="OtherRegName1" Type="varchar" MaxLength="50" />
+    <Property Name="OtherRegNo1" Type="varchar" MaxLength="30" />
+    <Property Name="OtherRegName2" Type="varchar" MaxLength="50" />
+    <Property Name="OtherRegNo2" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Group_Master">
+    <Key>
+      <PropertyRef Name="GrpID" />
+    </Key>
+    <Property Name="GrpID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="100" />
+    <Property Name="GIplmg" Type="nvarchar" MaxLength="100" />
+    <Property Name="GrpAdmin" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Group_Member">
+    <Key>
+      <PropertyRef Name="GrpMemtabid" />
+    </Key>
+    <Property Name="GrpMemtabid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GrpID" Type="int" />
+    <Property Name="GrpMemid" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Ip" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Group_Message">
+    <Key>
+      <PropertyRef Name="GroMsgld" />
+    </Key>
+    <Property Name="GroMsgld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GrpID" Type="int" />
+    <Property Name="SenderID" Type="int" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" />
+    <Property Name="AudioURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="VideoURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="FileURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="MsgType" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Invite_User">
+    <Key>
+      <PropertyRef Name="InvUser" />
+    </Key>
+    <Property Name="InvUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FromUser" Type="int" />
+    <Property Name="ToMobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="int" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Meeting_Master">
+    <Key>
+      <PropertyRef Name="MetID" />
+    </Key>
+    <Property Name="MetID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MeetingTitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="MeetingPlace" Type="nvarchar" MaxLength="200" />
+    <Property Name="MeetingDate" Type="datetime" />
+    <Property Name="MeetingTime" Type="nvarchar" MaxLength="100" />
+    <Property Name="MeetingGenID" Type="int" />
+    <Property Name="MeetingType" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="int" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Meeting_User">
+    <Key>
+      <PropertyRef Name="MetTabId" />
+    </Key>
+    <Property Name="MetTabId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MetID" Type="int" />
+    <Property Name="MetUID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DataCreated" Type="int" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Notification_Tab">
+    <Key>
+      <PropertyRef Name="NoteID" />
+    </Key>
+    <Property Name="NoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Notedet" Type="nvarchar" MaxLength="200" />
+    <Property Name="NotifyTo" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IP" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Opinion_Metting_Master">
+    <Key>
+      <PropertyRef Name="Opinionld" />
+    </Key>
+    <Property Name="Opinionld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MetID" Type="int" />
+    <Property Name="OpinionText" Type="nvarchar" MaxLength="100" />
+    <Property Name="OpinionType" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="int" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="RegID" />
+      <PropertyRef Name="DepID" />
+    </Key>
+    <Property Name="RegID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Moblie" Type="nvarchar" MaxLength="10" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="DepID" Type="int" Nullable="false" />
+    <Property Name="DOB" Type="datetime" StoreGeneratedPattern="Computed" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="AboutSelf" Type="nvarchar" MaxLength="200" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DataCreated" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="DateModify" Type="datetime" />
+    <Property Name="IsDeleted" Type="int" />
+    <Property Name="IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Us_Id" Type="int" />
+    <Property Name="LastActDate" Type="datetime" />
+    <Property Name="MobId" Type="nvarchar" MaxLength="500" />
+    <Property Name="MobType" Type="int" />
+    <Property Name="Otp" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtpFlag" Type="int" />
+    <Property Name="OtpDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SplashAdvMaster_1">
+    <Key>
+      <PropertyRef Name="AdvID" />
+    </Key>
+    <Property Name="AdvID" Type="int" Nullable="false" />
+    <Property Name="AdvTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdvImage" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SplashAdvMaster_2">
+    <Key>
+      <PropertyRef Name="Advld" />
+    </Key>
+    <Property Name="Advld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DeptId" Type="int" />
+    <Property Name="DateForm" Type="datetime" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="RepTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DataCreated" Type="datetime" />
+    <Property Name="ModifyBy" Type="int" />
+    <Property Name="DateModify" Type="datetime" />
+    <Property Name="IsDeleted" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Category">
+    <Key>
+      <PropertyRef Name="CoId" />
+      <PropertyRef Name="UCatID" />
+    </Key>
+    <Property Name="CoId" Type="int" Nullable="false" />
+    <Property Name="UCatID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UCatName" Type="varchar" MaxLength="20" />
+    <Property Name="Remarks" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="Dttm" Type="datetime" />
+    <Property Name="ChkSum" Type="varchar" MaxLength="100" />
+    <Property Name="UsID" Type="int" />
+  </EntityType>
+  <EntityType Name="User_Master">
+    <Key>
+      <PropertyRef Name="CoID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="CoID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="CatID" Type="int" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="100" />
+    <Property Name="EmpID" Type="int" />
+    <Property Name="UserMode" Type="varchar" MaxLength="20" />
+    <Property Name="Status" Type="varchar" MaxLength="1" />
+    <Property Name="Dttm" Type="datetime" />
+    <Property Name="ChkSum" Type="varchar" MaxLength="100" />
+    <Property Name="UsID" Type="int" />
+    <Property Name="Lic_ID" Type="int" />
+    <Property Name="Phone" Type="varchar" MaxLength="800" />
+    <Property Name="PhoneType" Type="int" />
+    <Property Name="OTP" Type="varchar" MaxLength="100" />
+    <Property Name="OPTDate" Type="datetime" />
+    <Property Name="OTPStatus" Type="int" />
+    <Property Name="DeptID" Type="int" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="int" />
+  </EntityType>
+  <EntityType Name="Vendor_Master">
+    <Key>
+      <PropertyRef Name="VendorId" />
+    </Key>
+    <Property Name="VendorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="V_Name" Type="varchar" MaxLength="25" />
+    <Property Name="VOAddress" Type="varchar(max)" />
+    <Property Name="VOGLId" Type="int" />
+    <Property Name="VOPinCode" Type="int" />
+    <Property Name="VOPhone1" Type="varchar" MaxLength="12" />
+    <Property Name="VOPhone2" Type="varchar" MaxLength="12" />
+    <Property Name="VFAddress" Type="varchar(max)" />
+    <Property Name="VFGLId" Type="int" />
+    <Property Name="VFPinCode" Type="int" />
+    <Property Name="VFPhone1" Type="varchar" MaxLength="12" />
+    <Property Name="VFPhone2" Type="varchar" MaxLength="12" />
+    <Property Name="VBankName" Type="varchar" MaxLength="50" />
+    <Property Name="VBankIFSC" Type="varchar" MaxLength="15" />
+    <Property Name="VBankBranch" Type="varchar" MaxLength="20" />
+    <Property Name="VBankAcNo" Type="varchar" MaxLength="20" />
+    <Property Name="VEMailId" Type="varchar" MaxLength="50" />
+    <Property Name="VContactPerson" Type="varchar" MaxLength="20" />
+    <Property Name="VCDOB" Type="datetime" />
+    <Property Name="VCMobile" Type="varchar" MaxLength="10" />
+    <Property Name="VSrTaxNo" Type="varchar" MaxLength="10" />
+    <Property Name="VSrTaxDate" Type="datetime" />
+    <Property Name="VStNo" Type="varchar" MaxLength="10" />
+    <Property Name="VStDate" Type="datetime" />
+    <Property Name="VCstNo" Type="varchar" MaxLength="10" />
+    <Property Name="VCstDate" Type="datetime" />
+    <Property Name="VRegNo" Type="varchar" MaxLength="10" />
+    <Property Name="VRegDate" Type="datetime" />
+    <Property Name="VPanNo" Type="varchar" MaxLength="10" />
+    <Property Name="VPanDate" Type="datetime" />
+    <Property Name="VatNo" Type="varchar" MaxLength="10" />
+    <Property Name="VatDate" Type="datetime" />
+    <Property Name="VCrLimit" Type="int" />
+    <Property Name="VCrDays" Type="int" />
+    <Property Name="VStatus" Type="varchar" MaxLength="1" />
+    <Property Name="Dttm" Type="datetime" />
+    <Property Name="UsID" Type="int" />
+  </EntityType>
+  <Function Name="Advertisement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Ad_Cat_Id" Type="int" Mode="In" />
+    <Parameter Name="Ad_Cat_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ad_Cat_Reason" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dttm" Type="datetime" Mode="In" />
+    <Parameter Name="OP" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Depatment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DeptId" Type="int" Mode="In" />
+    <Parameter Name="Department" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedBy" Type="int" Mode="In" />
+    <Parameter Name="DateCreated" Type="datetime" Mode="In" />
+    <Parameter Name="ModifyBy" Type="int" Mode="In" />
+    <Parameter Name="Datemodify" Type="datetime" Mode="In" />
+    <Parameter Name="IsDeleted" Type="int" Mode="In" />
+    <Parameter Name="op" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_A_UserCatergory1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CoId" Type="int" Mode="In" />
+    <Parameter Name="UCatID" Type="int" Mode="In" />
+    <Parameter Name="UCatName" Type="varchar" Mode="In" />
+    <Parameter Name="Remarks" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="Dttm" Type="datetime" Mode="In" />
+    <Parameter Name="ChkSum" Type="varchar" Mode="In" />
+    <Parameter Name="UsID" Type="int" Mode="In" />
+    <Parameter Name="CoFinID" Type="int" Mode="In" />
+    <Parameter Name="operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sp_AdminUserMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="operation" Type="varchar" Mode="In" />
+    <Parameter Name="CoID" Type="int" Mode="In" />
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="CatID" Type="int" Mode="In" />
+    <Parameter Name="Email" Type="varchar(max)" Mode="In" />
+    <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+    <Parameter Name="EmpID" Type="int" Mode="In" />
+    <Parameter Name="UserMode" Type="varchar" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+    <Parameter Name="Dttm" Type="datetime" Mode="In" />
+    <Parameter Name="ChkSum" Type="varchar" Mode="In" />
+    <Parameter Name="UsID" Type="int" Mode="In" />
+    <Parameter Name="Lic_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="UserMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="CatId" Type="int" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+    <Parameter Name="UserMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="nvarchar" Mode="In" />
+    <Parameter Name="Dttm" Type="datetime" Mode="In" />
+    <Parameter Name="UsID" Type="int" Mode="In" />
+    <Parameter Name="OP" Type="int" Mode="In" />
+  </Function>
+</Schema>

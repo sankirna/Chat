@@ -1,0 +1,111 @@
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\AutoMapper.Net4.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\Chat.Service.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\Chat.Service.pdb
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\Antlr3.Runtime.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\AutoMapper.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\EntityFramework.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\Microsoft.Web.Infrastructure.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\Newtonsoft.Json.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Net.Http.Formatting.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Helpers.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Http.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Http.WebHost.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Mvc.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Optimization.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Providers.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Razor.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.WebPages.Deployment.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.WebPages.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.WebPages.Razor.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\WebGrease.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\AutoMapper.pdb
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\AutoMapper.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\AutoMapper.Net4.pdb
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\Newtonsoft.Json.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Net.Http.Formatting.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Helpers.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Http.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Http.WebHost.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Mvc.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.Razor.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.WebPages.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.WebPages.Deployment.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\System.Web.WebPages.Razor.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\bin\EntityFramework.xml
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\obj\Debug\Chat.Service.csprojResolveAssemblyReference.cache
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\obj\Debug\Chat.Service.dll
+D:\my work\aark\Chat-master\Chat-master\Chat.Service\Chat.Service\obj\Debug\Chat.Service.pdb
+G:\Chat.Service\Chat.Service\bin\AutoMapper.Net4.dll
+G:\Chat.Service\Chat.Service\bin\Chat.Service.dll
+G:\Chat.Service\Chat.Service\bin\Chat.Service.pdb
+G:\Chat.Service\Chat.Service\bin\Antlr3.Runtime.dll
+G:\Chat.Service\Chat.Service\bin\AutoMapper.dll
+G:\Chat.Service\Chat.Service\bin\EntityFramework.dll
+G:\Chat.Service\Chat.Service\bin\Microsoft.Web.Infrastructure.dll
+G:\Chat.Service\Chat.Service\bin\Newtonsoft.Json.dll
+G:\Chat.Service\Chat.Service\bin\System.Net.Http.Formatting.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Helpers.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Http.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Http.WebHost.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Mvc.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Optimization.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Providers.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.Razor.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Deployment.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.WebPages.dll
+G:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Razor.dll
+G:\Chat.Service\Chat.Service\bin\WebGrease.dll
+G:\Chat.Service\Chat.Service\bin\AutoMapper.pdb
+G:\Chat.Service\Chat.Service\bin\AutoMapper.xml
+G:\Chat.Service\Chat.Service\bin\AutoMapper.Net4.pdb
+G:\Chat.Service\Chat.Service\bin\Newtonsoft.Json.xml
+G:\Chat.Service\Chat.Service\bin\System.Net.Http.Formatting.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.Helpers.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.Http.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.Http.WebHost.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.Mvc.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.Razor.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.WebPages.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Deployment.xml
+G:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Razor.xml
+G:\Chat.Service\Chat.Service\bin\EntityFramework.xml
+G:\Chat.Service\Chat.Service\obj\Debug\Chat.Service.csprojResolveAssemblyReference.cache
+G:\Chat.Service\Chat.Service\obj\Debug\Chat.Service.dll
+G:\Chat.Service\Chat.Service\obj\Debug\Chat.Service.pdb
+E:\Chat.Service\Chat.Service\bin\AutoMapper.Net4.dll
+E:\Chat.Service\Chat.Service\bin\Chat.Service.dll
+E:\Chat.Service\Chat.Service\bin\Chat.Service.pdb
+E:\Chat.Service\Chat.Service\bin\Antlr3.Runtime.dll
+E:\Chat.Service\Chat.Service\bin\AutoMapper.dll
+E:\Chat.Service\Chat.Service\bin\EntityFramework.dll
+E:\Chat.Service\Chat.Service\bin\Microsoft.Web.Infrastructure.dll
+E:\Chat.Service\Chat.Service\bin\Newtonsoft.Json.dll
+E:\Chat.Service\Chat.Service\bin\System.Net.Http.Formatting.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Helpers.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Http.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Http.WebHost.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Mvc.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Optimization.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Providers.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.Razor.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Deployment.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.WebPages.dll
+E:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Razor.dll
+E:\Chat.Service\Chat.Service\bin\WebGrease.dll
+E:\Chat.Service\Chat.Service\bin\AutoMapper.pdb
+E:\Chat.Service\Chat.Service\bin\AutoMapper.xml
+E:\Chat.Service\Chat.Service\bin\AutoMapper.Net4.pdb
+E:\Chat.Service\Chat.Service\bin\Newtonsoft.Json.xml
+E:\Chat.Service\Chat.Service\bin\System.Net.Http.Formatting.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.Helpers.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.Http.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.Http.WebHost.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.Mvc.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.Razor.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.WebPages.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Deployment.xml
+E:\Chat.Service\Chat.Service\bin\System.Web.WebPages.Razor.xml
+E:\Chat.Service\Chat.Service\bin\EntityFramework.xml
+E:\Chat.Service\Chat.Service\obj\Debug\Chat.Service.csprojResolveAssemblyReference.cache
+E:\Chat.Service\Chat.Service\obj\Debug\Chat.Service.dll
+E:\Chat.Service\Chat.Service\obj\Debug\Chat.Service.pdb

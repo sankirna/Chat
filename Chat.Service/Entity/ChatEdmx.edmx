@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ChatModelStoreContainer">
+          <EntitySet Name="Advertise" EntityType="ChatModel.Store.Advertise" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Advertisement_Cat" EntityType="ChatModel.Store.Advertisement_Cat" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ChatTab" EntityType="ChatModel.Store.ChatTab" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Country_State_city" EntityType="ChatModel.Store.Country_State_city" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Department_Master" EntityType="ChatModel.Store.Department_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Friend_Coonnect_Tab" EntityType="ChatModel.Store.Friend_Coonnect_Tab" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="G_CompanyMaster" EntityType="ChatModel.Store.G_CompanyMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group_Master" EntityType="ChatModel.Store.Group_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group_Member" EntityType="ChatModel.Store.Group_Member" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Group_Message" EntityType="ChatModel.Store.Group_Message" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invite_User" EntityType="ChatModel.Store.Invite_User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Meeting_Master" EntityType="ChatModel.Store.Meeting_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Meeting_User" EntityType="ChatModel.Store.Meeting_User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notification_Tab" EntityType="ChatModel.Store.Notification_Tab" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Opinion_Metting_Master" EntityType="ChatModel.Store.Opinion_Metting_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Registration" EntityType="ChatModel.Store.Registration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SplashAdvMaster_1" EntityType="ChatModel.Store.SplashAdvMaster_1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SplashAdvMaster_2" EntityType="ChatModel.Store.SplashAdvMaster_2" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User_Category" EntityType="ChatModel.Store.User_Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User_Master" EntityType="ChatModel.Store.User_Master" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vendor_Master" EntityType="ChatModel.Store.Vendor_Master" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Advertise">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="Second" Type="int" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ToDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Advertisement_Cat">
+          <Key>
+            <PropertyRef Name="Ad_Cat_Id" />
+          </Key>
+          <Property Name="Ad_Cat_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ad_Cat_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ad_Cat_Reason" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dttm" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ChatTab">
+          <Key>
+            <PropertyRef Name="ChatId" />
+          </Key>
+          <Property Name="ChatId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SenderId" Type="int" />
+          <Property Name="ReceiverID" Type="int" />
+          <Property Name="Message" Type="nvarchar" MaxLength="50" />
+          <Property Name="AudioURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="VideoURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileURL" Type="nvarchar" MaxLength="50" />
+          <Property Name="MsgType" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Country_State_city">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="L1" Type="nvarchar" MaxLength="50" />
+          <Property Name="L2" Type="nvarchar" MaxLength="50" />
+          <Property Name="L3" Type="nvarchar" MaxLength="50" />
+          <Property Name="L4" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="District" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Department_Master">
+          <Key>
+            <PropertyRef Name="DeptId" />
+          </Key>
+          <Property Name="DeptId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="Datemodify" Type="datetime" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Friend_Coonnect_Tab">
+          <Key>
+            <PropertyRef Name="FCId" />
+          </Key>
+          <Property Name="FCId" Type="int" Nullable="false" />
+          <Property Name="SenderID" Type="int" />
+          <Property Name="ReceiverID" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="G_CompanyMaster">
+          <Key>
+            <PropertyRef Name="CoID" />
+          </Key>
+          <Property Name="CoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CoName" Type="varchar" MaxLength="35" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="10" />
+          <Property Name="ContactPerson" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="25" />
+          <Property Name="URL" Type="varchar" MaxLength="25" />
+          <Property Name="RegNo" Type="varchar" MaxLength="20" />
+          <Property Name="SrvTaxNo" Type="varchar" MaxLength="20" />
+          <Property Name="TANNo" Type="varchar" MaxLength="20" />
+          <Property Name="PAN" Type="varchar" MaxLength="20" />
+          <Property Name="Logo" Type="varchar(max)" />
+          <Property Name="UsID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="1" />
+          <Property Name="ChkSum" Type="varchar" MaxLength="100" />
+          <Property Name="Dttm" Type="datetime" />
+          <Property Name="PanDate" Type="datetime" />
+          <Property Name="PanRenewDate" Type="datetime" />
+          <Property Name="PanCircle" Type="varchar" MaxLength="20" />
+          <Property Name="TDSNo" Type="varchar" MaxLength="20" />
+          <Property Name="TDSDate" Type="datetime" />
+          <Property Name="TdsRenewDate" Type="datetime" />
+          <Property Name="TdsCircle" Type="varchar" MaxLength="20" />
+          <Property Name="StNO" Type="varchar" MaxLength="20" />
+          <Property Name="StDate" Type="datetime" />
+          <Property Name="StRenewDate" Type="datetime" />
+          <Property Name="CstNo" Type="varchar" MaxLength="20" />
+          <Property Name="CstDate" Type="datetime" />
+          <Property Name="CstRenewDate" Type="datetime" />
+          <Property Name="ExciseNo" Type="varchar" MaxLength="20" />
+          <Property Name="ExciseDate" Type="datetime" />
+          <Property Name="ExciseRenewDate" Type="datetime" />
+          <Property Name="EccNo" Type="varchar" MaxLength="20" />
+          <Property Name="EccDate" Type="datetime" />
+          <Property Name="EccRenewDate" Type="datetime" />
+          <Property Name="VatDate" Type="datetime" />
+          <Property Name="VatRenewDate" Type="datetime" />
+          <Property Name="CompanyRagNo" Type="varchar" MaxLength="20" />
+          <Property Name="LicenceNo" Type="varchar" MaxLength="20" />
+          <Property Name="CompanyType" Type="varchar" MaxLength="20" />
+          <Property Name="BusinessType" Type="varchar" MaxLength="20" />
+          <Property Name="PinCode" Type="varchar" MaxLength="6" />
+          <Property Name="CID" Type="varchar" MaxLength="20" />
+          <Property Name="SID" Type="varchar" MaxLength="20" />
+          <Property Name="CIID" Type="varchar" MaxLength="20" />
+          <Property Name="VatNo1" Type="varchar" MaxLength="30" />
+          <Property Name="OtherRegName1" Type="varchar" MaxLength="50" />
+          <Property Name="OtherRegNo1" Type="varchar" MaxLength="30" />
+          <Property Name="OtherRegName2" Type="varchar" MaxLength="50" />
+          <Property Name="OtherRegNo2" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Group_Master">
+          <Key>
+            <PropertyRef Name="GrpID" />
+          </Key>
+          <Property Name="GrpID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="100" />
+          <Property Name="GIplmg" Type="nvarchar" MaxLength="100" />
+          <Property Name="GrpAdmin" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Group_Member">
+          <Key>
+            <PropertyRef Name="GrpMemtabid" />
+          </Key>
+          <Property Name="GrpMemtabid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GrpID" Type="int" />
+          <Property Name="GrpMemid" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Group_Message">
+          <Key>
+            <PropertyRef Name="GroMsgld" />
+          </Key>
+          <Property Name="GroMsgld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GrpID" Type="int" />
+          <Property Name="SenderID" Type="int" />
+          <Property Name="Message" Type="nvarchar" MaxLength="500" />
+          <Property Name="AudioURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="VideoURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="MsgType" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Invite_User">
+          <Key>
+            <PropertyRef Name="InvUser" />
+          </Key>
+          <Property Name="InvUser" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FromUser" Type="int" />
+          <Property Name="ToMobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DateCreated" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Meeting_Master">
+          <Key>
+            <PropertyRef Name="MetID" />
+          </Key>
+          <Property Name="MetID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingTitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="MeetingPlace" Type="nvarchar" MaxLength="200" />
+          <Property Name="MeetingDate" Type="datetime" />
+          <Property Name="MeetingTime" Type="nvarchar" MaxLength="100" />
+          <Property Name="MeetingGenID" Type="int" />
+          <Property Name="MeetingType" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DateCreated" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Meeting_User">
+          <Key>
+            <PropertyRef Name="MetTabId" />
+          </Key>
+          <Property Name="MetTabId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MetID" Type="int" />
+          <Property Name="MetUID" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DataCreated" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Notification_Tab">
+          <Key>
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="NoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Notedet" Type="nvarchar" MaxLength="200" />
+          <Property Name="NotifyTo" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Time" Type="datetime" />
+          <Property Name="Status" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Opinion_Metting_Master">
+          <Key>
+            <PropertyRef Name="Opinionld" />
+          </Key>
+          <Property Name="Opinionld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MetID" Type="int" />
+          <Property Name="OpinionText" Type="nvarchar" MaxLength="100" />
+          <Property Name="OpinionType" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DateCreated" Type="int" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="RegID" />
+            <PropertyRef Name="DepID" />
+          </Key>
+          <Property Name="RegID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Moblie" Type="nvarchar" MaxLength="10" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="DepID" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="datetime" StoreGeneratedPattern="Computed" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="AboutSelf" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DataCreated" Type="datetime" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="DateModify" Type="datetime" />
+          <Property Name="IsDeleted" Type="int" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="Us_Id" Type="int" />
+          <Property Name="LastActDate" Type="datetime" />
+          <Property Name="MobId" Type="nvarchar" MaxLength="500" />
+          <Property Name="MobType" Type="int" />
+          <Property Name="Otp" Type="nvarchar" MaxLength="50" />
+          <Property Name="OtpFlag" Type="int" />
+          <Property Name="OtpDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SplashAdvMaster_1">
+          <Key>
+            <PropertyRef Name="AdvID" />
+          </Key>
+          <Property Name="AdvID" Type="int" Nullable="false" />
+          <Property Name="AdvTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdvImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SplashAdvMaster_2">
+          <Key>
+            <PropertyRef Name="Advld" />
+          </Key>
+          <Property Name="Advld" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DeptId" Type="int" />
+          <Property Name="DateForm" Type="datetime" />
+          <Property Name="DateTo" Type="datetime" />
+          <Property Name="RepTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="DataCreated" Type="datetime" />
+          <Property Name="ModifyBy" Type="int" />
+          <Property Name="DateModify" Type="datetime" />
+          <Property Name="IsDeleted" Type="int" />
+        </EntityType>
+        <EntityType Name="User_Category">
+          <Key>
+            <PropertyRef Name="CoId" />
+            <PropertyRef Name="UCatID" />
+          </Key>
+          <Property Name="CoId" Type="int" Nullable="false" />
+          <Property Name="UCatID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UCatName" Type="varchar" MaxLength="20" />
+          <Property Name="Remarks" Type="varchar(max)" />
+          <Property Name="Status" Type="varchar" MaxLength="1" />
+          <Property Name="Dttm" Type="datetime" />
+          <Property Name="ChkSum" Type="varchar" MaxLength="100" />
+          <Property Name="UsID" Type="int" />
+        </EntityType>
+        <EntityType Name="User_Master">
+          <Key>
+            <PropertyRef Name="CoID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="CoID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="CatID" Type="int" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="100" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="UserMode" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="varchar" MaxLength="1" />
+          <Property Name="Dttm" Type="datetime" />
+          <Property Name="ChkSum" Type="varchar" MaxLength="100" />
+          <Property Name="UsID" Type="int" />
+          <Property Name="Lic_ID" Type="int" />
+          <Property Name="Phone" Type="varchar" MaxLength="800" />
+          <Property Name="PhoneType" Type="int" />
+          <Property Name="OTP" Type="varchar" MaxLength="100" />
+          <Property Name="OPTDate" Type="datetime" />
+          <Property Name="OTPStatus" Type="int" />
+          <Property Name="DeptID" Type="int" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Gender" Type="int" />
+        </EntityType>
+        <EntityType Name="Vendor_Master">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Name="VendorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="V_Name" Type="varchar" MaxLength="25" />
+          <Property Name="VOAddress" Type="varchar(max)" />
+          <Property Name="VOGLId" Type="int" />
+          <Property Name="VOPinCode" Type="int" />
+          <Property Name="VOPhone1" Type="varchar" MaxLength="12" />
+          <Property Name="VOPhone2" Type="varchar" MaxLength="12" />
+          <Property Name="VFAddress" Type="varchar(max)" />
+          <Property Name="VFGLId" Type="int" />
+          <Property Name="VFPinCode" Type="int" />
+          <Property Name="VFPhone1" Type="varchar" MaxLength="12" />
+          <Property Name="VFPhone2" Type="varchar" MaxLength="12" />
+          <Property Name="VBankName" Type="varchar" MaxLength="50" />
+          <Property Name="VBankIFSC" Type="varchar" MaxLength="15" />
+          <Property Name="VBankBranch" Type="varchar" MaxLength="20" />
+          <Property Name="VBankAcNo" Type="varchar" MaxLength="20" />
+          <Property Name="VEMailId" Type="varchar" MaxLength="50" />
+          <Property Name="VContactPerson" Type="varchar" MaxLength="20" />
+          <Property Name="VCDOB" Type="datetime" />
+          <Property Name="VCMobile" Type="varchar" MaxLength="10" />
+          <Property Name="VSrTaxNo" Type="varchar" MaxLength="10" />
+          <Property Name="VSrTaxDate" Type="datetime" />
+          <Property Name="VStNo" Type="varchar" MaxLength="10" />
+          <Property Name="VStDate" Type="datetime" />
+          <Property Name="VCstNo" Type="varchar" MaxLength="10" />
+          <Property Name="VCstDate" Type="datetime" />
+          <Property Name="VRegNo" Type="varchar" MaxLength="10" />
+          <Property Name="VRegDate" Type="datetime" />
+          <Property Name="VPanNo" Type="varchar" MaxLength="10" />
+          <Property Name="VPanDate" Type="datetime" />
+          <Property Name="VatNo" Type="varchar" MaxLength="10" />
+          <Property Name="VatDate" Type="datetime" />
+          <Property Name="VCrLimit" Type="int" />
+          <Property Name="VCrDays" Type="int" />
+          <Property Name="VStatus" Type="varchar" MaxLength="1" />
+          <Property Name="Dttm" Type="datetime" />
+          <Property Name="UsID" Type="int" />
+        </EntityType>
+        <Function Name="Advertisement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Ad_Cat_Id" Type="int" Mode="In" />
+          <Parameter Name="Ad_Cat_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ad_Cat_Reason" Type="nvarchar" Mode="In" />
+          <Parameter Name="Dttm" Type="datetime" Mode="In" />
+          <Parameter Name="OP" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Depatment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DeptId" Type="int" Mode="In" />
+          <Parameter Name="Department" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="int" Mode="In" />
+          <Parameter Name="DateCreated" Type="datetime" Mode="In" />
+          <Parameter Name="ModifyBy" Type="int" Mode="In" />
+          <Parameter Name="Datemodify" Type="datetime" Mode="In" />
+          <Parameter Name="IsDeleted" Type="int" Mode="In" />
+          <Parameter Name="op" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_A_UserCatergory1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CoId" Type="int" Mode="In" />
+          <Parameter Name="UCatID" Type="int" Mode="In" />
+          <Parameter Name="UCatName" Type="varchar" Mode="In" />
+          <Parameter Name="Remarks" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="Dttm" Type="datetime" Mode="In" />
+          <Parameter Name="ChkSum" Type="varchar" Mode="In" />
+          <Parameter Name="UsID" Type="int" Mode="In" />
+          <Parameter Name="CoFinID" Type="int" Mode="In" />
+          <Parameter Name="operation" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_AdminUserMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="operation" Type="varchar" Mode="In" />
+          <Parameter Name="CoID" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="CatID" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="varchar(max)" Mode="In" />
+          <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+          <Parameter Name="EmpID" Type="int" Mode="In" />
+          <Parameter Name="UserMode" Type="varchar" Mode="In" />
+          <Parameter Name="Status" Type="varchar" Mode="In" />
+          <Parameter Name="Dttm" Type="datetime" Mode="In" />
+          <Parameter Name="ChkSum" Type="varchar" Mode="In" />
+          <Parameter Name="UsID" Type="int" Mode="In" />
+          <Parameter Name="Lic_ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UserMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserID" Type="int" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="CatId" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="MobileNo" Type="varchar" Mode="In" />
+          <Parameter Name="UserMode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="nvarchar" Mode="In" />
+          <Parameter Name="Dttm" Type="datetime" Mode="In" />
+          <Parameter Name="UsID" Type="int" Mode="In" />
+          <Parameter Name="OP" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChatModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ChatContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Advertises" EntityType="ChatModel.Advertise" />
+          <EntitySet Name="Advertisement_Cat" EntityType="ChatModel.Advertisement_Cat" />
+          <EntitySet Name="ChatTabs" EntityType="ChatModel.ChatTab" />
+          <EntitySet Name="Country_State_city" EntityType="ChatModel.Country_State_city" />
+          <EntitySet Name="Department_Master" EntityType="ChatModel.Department_Master" />
+          <EntitySet Name="Friend_Coonnect_Tab" EntityType="ChatModel.Friend_Coonnect_Tab" />
+          <EntitySet Name="G_CompanyMaster" EntityType="ChatModel.G_CompanyMaster" />
+          <EntitySet Name="Group_Master" EntityType="ChatModel.Group_Master" />
+          <EntitySet Name="Group_Member" EntityType="ChatModel.Group_Member" />
+          <EntitySet Name="Group_Message" EntityType="ChatModel.Group_Message" />
+          <EntitySet Name="Invite_User" EntityType="ChatModel.Invite_User" />
+          <EntitySet Name="Meeting_Master" EntityType="ChatModel.Meeting_Master" />
+          <EntitySet Name="Meeting_User" EntityType="ChatModel.Meeting_User" />
+          <EntitySet Name="Notification_Tab" EntityType="ChatModel.Notification_Tab" />
+          <EntitySet Name="Opinion_Metting_Master" EntityType="ChatModel.Opinion_Metting_Master" />
+          <EntitySet Name="Registrations" EntityType="ChatModel.Registration" />
+          <EntitySet Name="SplashAdvMaster_1" EntityType="ChatModel.SplashAdvMaster_1" />
+          <EntitySet Name="SplashAdvMaster_2" EntityType="ChatModel.SplashAdvMaster_2" />
+          <EntitySet Name="User_Category" EntityType="ChatModel.User_Category" />
+          <EntitySet Name="User_Master" EntityType="ChatModel.User_Master" />
+          <EntitySet Name="Vendor_Master" EntityType="ChatModel.Vendor_Master" />
+          <FunctionImport Name="Advertisement" ReturnType="Collection(ChatModel.Advertisement_Result)">
+            <Parameter Name="Ad_Cat_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Ad_Cat_Name" Mode="In" Type="String" />
+            <Parameter Name="Ad_Cat_Reason" Mode="In" Type="String" />
+            <Parameter Name="Dttm" Mode="In" Type="DateTime" />
+            <Parameter Name="OP" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Depatment" ReturnType="Collection(ChatModel.Depatment_Result)">
+            <Parameter Name="DeptId" Mode="In" Type="Int32" />
+            <Parameter Name="Department" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="Int32" />
+            <Parameter Name="DateCreated" Mode="In" Type="DateTime" />
+            <Parameter Name="ModifyBy" Mode="In" Type="Int32" />
+            <Parameter Name="Datemodify" Mode="In" Type="DateTime" />
+            <Parameter Name="IsDeleted" Mode="In" Type="Int32" />
+            <Parameter Name="op" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_A_UserCatergory1" ReturnType="Collection(ChatModel.sp_A_UserCatergory1_Result)">
+            <Parameter Name="CoId" Mode="In" Type="Int32" />
+            <Parameter Name="UCatID" Mode="In" Type="Int32" />
+            <Parameter Name="UCatName" Mode="In" Type="String" />
+            <Parameter Name="Remarks" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="Dttm" Mode="In" Type="DateTime" />
+            <Parameter Name="ChkSum" Mode="In" Type="String" />
+            <Parameter Name="UsID" Mode="In" Type="Int32" />
+            <Parameter Name="CoFinID" Mode="In" Type="Int32" />
+            <Parameter Name="operation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_AdminUserMaster" ReturnType="Collection(ChatModel.Sp_AdminUserMaster_Result)">
+            <Parameter Name="operation" Mode="In" Type="String" />
+            <Parameter Name="CoID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="CatID" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="MobileNo" Mode="In" Type="String" />
+            <Parameter Name="EmpID" Mode="In" Type="Int32" />
+            <Parameter Name="UserMode" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="Dttm" Mode="In" Type="DateTime" />
+            <Parameter Name="ChkSum" Mode="In" Type="String" />
+            <Parameter Name="UsID" Mode="In" Type="Int32" />
+            <Parameter Name="Lic_ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ChatModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ChatModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="UserMaster" ReturnType="Collection(ChatModel.UserMaster_Result)">
+            <Parameter Name="UserID" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="CatId" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="MobileNo" Mode="In" Type="String" />
+            <Parameter Name="UserMode" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="Dttm" Mode="In" Type="DateTime" />
+            <Parameter Name="UsID" Mode="In" Type="Int32" />
+            <Parameter Name="OP" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Advertise">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Second" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Advertisement_Cat">
+          <Key>
+            <PropertyRef Name="Ad_Cat_Id" />
+          </Key>
+          <Property Name="Ad_Cat_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad_Cat_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Ad_Cat_Reason" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Dttm" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ChatTab">
+          <Key>
+            <PropertyRef Name="ChatId" />
+          </Key>
+          <Property Name="ChatId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SenderId" Type="Int32" />
+          <Property Name="ReceiverID" Type="Int32" />
+          <Property Name="Message" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AudioURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="VideoURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FileURL" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MsgType" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Country_State_city">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="L1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="L2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="L3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="L4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="District" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Department_Master">
+          <Key>
+            <PropertyRef Name="DeptId" />
+          </Key>
+          <Property Name="DeptId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Department" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="Datemodify" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Friend_Coonnect_Tab">
+          <Key>
+            <PropertyRef Name="FCId" />
+          </Key>
+          <Property Name="FCId" Type="Int32" Nullable="false" />
+          <Property Name="SenderID" Type="Int32" />
+          <Property Name="ReceiverID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="G_CompanyMaster">
+          <Key>
+            <PropertyRef Name="CoID" />
+          </Key>
+          <Property Name="CoID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CoName" Type="String" MaxLength="35" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ContactPerson" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="RegNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SrvTaxNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TANNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PAN" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Logo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="UsID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="ChkSum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Dttm" Type="DateTime" Precision="3" />
+          <Property Name="PanDate" Type="DateTime" Precision="3" />
+          <Property Name="PanRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="PanCircle" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TDSNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="TDSDate" Type="DateTime" Precision="3" />
+          <Property Name="TdsRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="TdsCircle" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StNO" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StDate" Type="DateTime" Precision="3" />
+          <Property Name="StRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="CstNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CstDate" Type="DateTime" Precision="3" />
+          <Property Name="CstRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="ExciseNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ExciseDate" Type="DateTime" Precision="3" />
+          <Property Name="ExciseRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="EccNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="EccDate" Type="DateTime" Precision="3" />
+          <Property Name="EccRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="VatDate" Type="DateTime" Precision="3" />
+          <Property Name="VatRenewDate" Type="DateTime" Precision="3" />
+          <Property Name="CompanyRagNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LicenceNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="BusinessType" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PinCode" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="CID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CIID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VatNo1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="OtherRegName1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OtherRegNo1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="OtherRegName2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OtherRegNo2" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Group_Master">
+          <Key>
+            <PropertyRef Name="GrpID" />
+          </Key>
+          <Property Name="GrpID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="GIplmg" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="GrpAdmin" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IP" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Group_Member">
+          <Key>
+            <PropertyRef Name="GrpMemtabid" />
+          </Key>
+          <Property Name="GrpMemtabid" Type="Int32" Nullable="false" />
+          <Property Name="GrpID" Type="Int32" />
+          <Property Name="GrpMemid" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Ip" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Group_Message">
+          <Key>
+            <PropertyRef Name="GroMsgld" />
+          </Key>
+          <Property Name="GroMsgld" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GrpID" Type="Int32" />
+          <Property Name="SenderID" Type="Int32" />
+          <Property Name="Message" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="AudioURL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="VideoURL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FileURL" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MsgType" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="IP" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Invite_User">
+          <Key>
+            <PropertyRef Name="InvUser" />
+          </Key>
+          <Property Name="InvUser" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FromUser" Type="Int32" />
+          <Property Name="ToMobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DateCreated" Type="Int32" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Meeting_Master">
+          <Key>
+            <PropertyRef Name="MetID" />
+          </Key>
+          <Property Name="MetID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingTitle" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="MeetingPlace" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="MeetingDate" Type="DateTime" Precision="3" />
+          <Property Name="MeetingTime" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MeetingGenID" Type="Int32" />
+          <Property Name="MeetingType" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DateCreated" Type="Int32" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Meeting_User">
+          <Key>
+            <PropertyRef Name="MetTabId" />
+          </Key>
+          <Property Name="MetTabId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MetID" Type="Int32" />
+          <Property Name="MetUID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DataCreated" Type="Int32" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Notification_Tab">
+          <Key>
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="NoteID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Notedet" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="NotifyTo" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="IP" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Opinion_Metting_Master">
+          <Key>
+            <PropertyRef Name="Opinionld" />
+          </Key>
+          <Property Name="Opinionld" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MetID" Type="Int32" />
+          <Property Name="OpinionText" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="OpinionType" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DateCreated" Type="Int32" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="RegID" />
+            <PropertyRef Name="DepID" />
+          </Key>
+          <Property Name="RegID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Moblie" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="DepID" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Precision="3" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Photo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AboutSelf" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DataCreated" Type="DateTime" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="DateModify" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Int32" />
+          <Property Name="IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Us_Id" Type="Int32" />
+          <Property Name="LastActDate" Type="DateTime" Precision="3" />
+          <Property Name="MobId" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="MobType" Type="Int32" />
+          <Property Name="Otp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OtpFlag" Type="Int32" />
+          <Property Name="OtpDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SplashAdvMaster_1">
+          <Key>
+            <PropertyRef Name="AdvID" />
+          </Key>
+          <Property Name="AdvID" Type="Int32" Nullable="false" />
+          <Property Name="AdvTitle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AdvImage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SplashAdvMaster_2">
+          <Key>
+            <PropertyRef Name="Advld" />
+          </Key>
+          <Property Name="Advld" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DeptId" Type="Int32" />
+          <Property Name="DateForm" Type="DateTime" Precision="3" />
+          <Property Name="DateTo" Type="DateTime" Precision="3" />
+          <Property Name="RepTime" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="DataCreated" Type="DateTime" Precision="3" />
+          <Property Name="ModifyBy" Type="Int32" />
+          <Property Name="DateModify" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User_Category">
+          <Key>
+            <PropertyRef Name="CoId" />
+            <PropertyRef Name="UCatID" />
+          </Key>
+          <Property Name="CoId" Type="Int32" Nullable="false" />
+          <Property Name="UCatID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UCatName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="Dttm" Type="DateTime" Precision="3" />
+          <Property Name="ChkSum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UsID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User_Master">
+          <Key>
+            <PropertyRef Name="CoID" />
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="CoID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CatID" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="UserMode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="Dttm" Type="DateTime" Precision="3" />
+          <Property Name="ChkSum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UsID" Type="Int32" />
+          <Property Name="Lic_ID" Type="Int32" />
+          <Property Type="String" Name="Phone" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PhoneType" />
+          <Property Type="String" Name="OTP" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="OPTDate" Precision="3" />
+          <Property Type="Int32" Name="OTPStatus" />
+          <Property Type="Int32" Name="DeptID" />
+          <Property Type="DateTime" Name="DOB" Precision="0" />
+          <Property Type="Int32" Name="Gender" />
+        </EntityType>
+        <EntityType Name="Vendor_Master">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Name="VendorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="V_Name" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="VOAddress" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VOGLId" Type="Int32" />
+          <Property Name="VOPinCode" Type="Int32" />
+          <Property Name="VOPhone1" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="VOPhone2" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="VFAddress" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="VFGLId" Type="Int32" />
+          <Property Name="VFPinCode" Type="Int32" />
+          <Property Name="VFPhone1" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="VFPhone2" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="VBankName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VBankIFSC" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="VBankBranch" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VBankAcNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VEMailId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VContactPerson" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="VCDOB" Type="DateTime" Precision="3" />
+          <Property Name="VCMobile" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VSrTaxNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VSrTaxDate" Type="DateTime" Precision="3" />
+          <Property Name="VStNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VStDate" Type="DateTime" Precision="3" />
+          <Property Name="VCstNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VCstDate" Type="DateTime" Precision="3" />
+          <Property Name="VRegNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VRegDate" Type="DateTime" Precision="3" />
+          <Property Name="VPanNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VPanDate" Type="DateTime" Precision="3" />
+          <Property Name="VatNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="VatDate" Type="DateTime" Precision="3" />
+          <Property Name="VCrLimit" Type="Int32" />
+          <Property Name="VCrDays" Type="Int32" />
+          <Property Name="VStatus" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="Dttm" Type="DateTime" Precision="3" />
+          <Property Name="UsID" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="Advertisement_Result">
+          <Property Type="Int32" Name="Ad_Cat_Id" Nullable="false" />
+          <Property Type="String" Name="Ad_Cat_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Ad_Cat_Reason" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Dttm" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="Depatment_Result">
+          <Property Type="Int32" Name="DeptId" Nullable="false" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ModifyBy" Nullable="true" />
+          <Property Type="DateTime" Name="Datemodify" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="IsDeleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_A_UserCatergory1_Result">
+          <Property Type="Int32" Name="CoId" Nullable="false" />
+          <Property Type="Int32" Name="UCatID" Nullable="false" />
+          <Property Type="String" Name="UCatName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Remarks" Nullable="true" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+          <Property Type="DateTime" Name="Dttm" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ChkSum" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="UsID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Sp_AdminUserMaster_Result">
+          <Property Type="String" Name="UCatName" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="CoID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CatID" Nullable="true" />
+          <Property Type="String" Name="Email" Nullable="true" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="EmpID" Nullable="true" />
+          <Property Type="String" Name="UserMode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+          <Property Type="DateTime" Name="Dttm" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ChkSum" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="UsID" Nullable="true" />
+          <Property Type="Int32" Name="Lic_ID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="UserMaster_Result">
+          <Property Type="Int32" Name="CoID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="CatID" Nullable="true" />
+          <Property Type="String" Name="Email" Nullable="true" />
+          <Property Type="String" Name="MobileNo" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="EmpID" Nullable="true" />
+          <Property Type="String" Name="UserMode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="1" />
+          <Property Type="DateTime" Name="Dttm" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ChkSum" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="UsID" Nullable="true" />
+          <Property Type="Int32" Name="Lic_ID" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChatModelStoreContainer" CdmEntityContainer="ChatContext">
+          <EntitySetMapping Name="Advertises">
+            <EntityTypeMapping TypeName="ChatModel.Advertise">
+              <MappingFragment StoreEntitySet="Advertise">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Second" ColumnName="Second" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Advertisement_Cat">
+            <EntityTypeMapping TypeName="ChatModel.Advertisement_Cat">
+              <MappingFragment StoreEntitySet="Advertisement_Cat">
+                <ScalarProperty Name="Ad_Cat_Id" ColumnName="Ad_Cat_Id" />
+                <ScalarProperty Name="Ad_Cat_Name" ColumnName="Ad_Cat_Name" />
+                <ScalarProperty Name="Ad_Cat_Reason" ColumnName="Ad_Cat_Reason" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChatTabs">
+            <EntityTypeMapping TypeName="ChatModel.ChatTab">
+              <MappingFragment StoreEntitySet="ChatTab">
+                <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+                <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+                <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="AudioURL" ColumnName="AudioURL" />
+                <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+                <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country_State_city">
+            <EntityTypeMapping TypeName="ChatModel.Country_State_city">
+              <MappingFragment StoreEntitySet="Country_State_city">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="L1" ColumnName="L1" />
+                <ScalarProperty Name="L2" ColumnName="L2" />
+                <ScalarProperty Name="L3" ColumnName="L3" />
+                <ScalarProperty Name="L4" ColumnName="L4" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Department_Master">
+            <EntityTypeMapping TypeName="ChatModel.Department_Master">
+              <MappingFragment StoreEntitySet="Department_Master">
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="Datemodify" ColumnName="Datemodify" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Friend_Coonnect_Tab">
+            <EntityTypeMapping TypeName="ChatModel.Friend_Coonnect_Tab">
+              <MappingFragment StoreEntitySet="Friend_Coonnect_Tab">
+                <ScalarProperty Name="FCId" ColumnName="FCId" />
+                <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+                <ScalarProperty Name="ReceiverID" ColumnName="ReceiverID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_CompanyMaster">
+            <EntityTypeMapping TypeName="ChatModel.G_CompanyMaster">
+              <MappingFragment StoreEntitySet="G_CompanyMaster">
+                <ScalarProperty Name="CoID" ColumnName="CoID" />
+                <ScalarProperty Name="CoName" ColumnName="CoName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="RegNo" ColumnName="RegNo" />
+                <ScalarProperty Name="SrvTaxNo" ColumnName="SrvTaxNo" />
+                <ScalarProperty Name="TANNo" ColumnName="TANNo" />
+                <ScalarProperty Name="PAN" ColumnName="PAN" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="PanDate" ColumnName="PanDate" />
+                <ScalarProperty Name="PanRenewDate" ColumnName="PanRenewDate" />
+                <ScalarProperty Name="PanCircle" ColumnName="PanCircle" />
+                <ScalarProperty Name="TDSNo" ColumnName="TDSNo" />
+                <ScalarProperty Name="TDSDate" ColumnName="TDSDate" />
+                <ScalarProperty Name="TdsRenewDate" ColumnName="TdsRenewDate" />
+                <ScalarProperty Name="TdsCircle" ColumnName="TdsCircle" />
+                <ScalarProperty Name="StNO" ColumnName="StNO" />
+                <ScalarProperty Name="StDate" ColumnName="StDate" />
+                <ScalarProperty Name="StRenewDate" ColumnName="StRenewDate" />
+                <ScalarProperty Name="CstNo" ColumnName="CstNo" />
+                <ScalarProperty Name="CstDate" ColumnName="CstDate" />
+                <ScalarProperty Name="CstRenewDate" ColumnName="CstRenewDate" />
+                <ScalarProperty Name="ExciseNo" ColumnName="ExciseNo" />
+                <ScalarProperty Name="ExciseDate" ColumnName="ExciseDate" />
+                <ScalarProperty Name="ExciseRenewDate" ColumnName="ExciseRenewDate" />
+                <ScalarProperty Name="EccNo" ColumnName="EccNo" />
+                <ScalarProperty Name="EccDate" ColumnName="EccDate" />
+                <ScalarProperty Name="EccRenewDate" ColumnName="EccRenewDate" />
+                <ScalarProperty Name="VatDate" ColumnName="VatDate" />
+                <ScalarProperty Name="VatRenewDate" ColumnName="VatRenewDate" />
+                <ScalarProperty Name="CompanyRagNo" ColumnName="CompanyRagNo" />
+                <ScalarProperty Name="LicenceNo" ColumnName="LicenceNo" />
+                <ScalarProperty Name="CompanyType" ColumnName="CompanyType" />
+                <ScalarProperty Name="BusinessType" ColumnName="BusinessType" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="SID" ColumnName="SID" />
+                <ScalarProperty Name="CIID" ColumnName="CIID" />
+                <ScalarProperty Name="VatNo1" ColumnName="VatNo1" />
+                <ScalarProperty Name="OtherRegName1" ColumnName="OtherRegName1" />
+                <ScalarProperty Name="OtherRegNo1" ColumnName="OtherRegNo1" />
+                <ScalarProperty Name="OtherRegName2" ColumnName="OtherRegName2" />
+                <ScalarProperty Name="OtherRegNo2" ColumnName="OtherRegNo2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_Master">
+            <EntityTypeMapping TypeName="ChatModel.Group_Master">
+              <MappingFragment StoreEntitySet="Group_Master">
+                <ScalarProperty Name="GrpID" ColumnName="GrpID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GIplmg" ColumnName="GIplmg" />
+                <ScalarProperty Name="GrpAdmin" ColumnName="GrpAdmin" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_Member">
+            <EntityTypeMapping TypeName="ChatModel.Group_Member">
+              <MappingFragment StoreEntitySet="Group_Member">
+                <ScalarProperty Name="GrpMemtabid" ColumnName="GrpMemtabid" />
+                <ScalarProperty Name="GrpID" ColumnName="GrpID" />
+                <ScalarProperty Name="GrpMemid" ColumnName="GrpMemid" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group_Message">
+            <EntityTypeMapping TypeName="ChatModel.Group_Message">
+              <MappingFragment StoreEntitySet="Group_Message">
+                <ScalarProperty Name="GroMsgld" ColumnName="GroMsgld" />
+                <ScalarProperty Name="GrpID" ColumnName="GrpID" />
+                <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="AudioURL" ColumnName="AudioURL" />
+                <ScalarProperty Name="VideoURL" ColumnName="VideoURL" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+                <ScalarProperty Name="FileURL" ColumnName="FileURL" />
+                <ScalarProperty Name="MsgType" ColumnName="MsgType" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invite_User">
+            <EntityTypeMapping TypeName="ChatModel.Invite_User">
+              <MappingFragment StoreEntitySet="Invite_User">
+                <ScalarProperty Name="InvUser" ColumnName="InvUser" />
+                <ScalarProperty Name="FromUser" ColumnName="FromUser" />
+                <ScalarProperty Name="ToMobile" ColumnName="ToMobile" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meeting_Master">
+            <EntityTypeMapping TypeName="ChatModel.Meeting_Master">
+              <MappingFragment StoreEntitySet="Meeting_Master">
+                <ScalarProperty Name="MetID" ColumnName="MetID" />
+                <ScalarProperty Name="MeetingTitle" ColumnName="MeetingTitle" />
+                <ScalarProperty Name="MeetingPlace" ColumnName="MeetingPlace" />
+                <ScalarProperty Name="MeetingDate" ColumnName="MeetingDate" />
+                <ScalarProperty Name="MeetingTime" ColumnName="MeetingTime" />
+                <ScalarProperty Name="MeetingGenID" ColumnName="MeetingGenID" />
+                <ScalarProperty Name="MeetingType" ColumnName="MeetingType" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Meeting_User">
+            <EntityTypeMapping TypeName="ChatModel.Meeting_User">
+              <MappingFragment StoreEntitySet="Meeting_User">
+                <ScalarProperty Name="MetTabId" ColumnName="MetTabId" />
+                <ScalarProperty Name="MetID" ColumnName="MetID" />
+                <ScalarProperty Name="MetUID" ColumnName="MetUID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notification_Tab">
+            <EntityTypeMapping TypeName="ChatModel.Notification_Tab">
+              <MappingFragment StoreEntitySet="Notification_Tab">
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+                <ScalarProperty Name="Notedet" ColumnName="Notedet" />
+                <ScalarProperty Name="NotifyTo" ColumnName="NotifyTo" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opinion_Metting_Master">
+            <EntityTypeMapping TypeName="ChatModel.Opinion_Metting_Master">
+              <MappingFragment StoreEntitySet="Opinion_Metting_Master">
+                <ScalarProperty Name="Opinionld" ColumnName="Opinionld" />
+                <ScalarProperty Name="MetID" ColumnName="MetID" />
+                <ScalarProperty Name="OpinionText" ColumnName="OpinionText" />
+                <ScalarProperty Name="OpinionType" ColumnName="OpinionType" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="ChatModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="RegID" ColumnName="RegID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Moblie" ColumnName="Moblie" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DepID" ColumnName="DepID" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AboutSelf" ColumnName="AboutSelf" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="DateModify" ColumnName="DateModify" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Us_Id" ColumnName="Us_Id" />
+                <ScalarProperty Name="LastActDate" ColumnName="LastActDate" />
+                <ScalarProperty Name="MobId" ColumnName="MobId" />
+                <ScalarProperty Name="MobType" ColumnName="MobType" />
+                <ScalarProperty Name="Otp" ColumnName="Otp" />
+                <ScalarProperty Name="OtpFlag" ColumnName="OtpFlag" />
+                <ScalarProperty Name="OtpDate" ColumnName="OtpDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SplashAdvMaster_1">
+            <EntityTypeMapping TypeName="ChatModel.SplashAdvMaster_1">
+              <MappingFragment StoreEntitySet="SplashAdvMaster_1">
+                <ScalarProperty Name="AdvID" ColumnName="AdvID" />
+                <ScalarProperty Name="AdvTitle" ColumnName="AdvTitle" />
+                <ScalarProperty Name="AdvImage" ColumnName="AdvImage" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SplashAdvMaster_2">
+            <EntityTypeMapping TypeName="ChatModel.SplashAdvMaster_2">
+              <MappingFragment StoreEntitySet="SplashAdvMaster_2">
+                <ScalarProperty Name="Advld" ColumnName="Advld" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="DateForm" ColumnName="DateForm" />
+                <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+                <ScalarProperty Name="RepTime" ColumnName="RepTime" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DataCreated" ColumnName="DataCreated" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="DateModify" ColumnName="DateModify" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Category">
+            <EntityTypeMapping TypeName="ChatModel.User_Category">
+              <MappingFragment StoreEntitySet="User_Category">
+                <ScalarProperty Name="CoId" ColumnName="CoId" />
+                <ScalarProperty Name="UCatID" ColumnName="UCatID" />
+                <ScalarProperty Name="UCatName" ColumnName="UCatName" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Master">
+            <EntityTypeMapping TypeName="ChatModel.User_Master">
+              <MappingFragment StoreEntitySet="User_Master">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="OTPStatus" ColumnName="OTPStatus" />
+                <ScalarProperty Name="OPTDate" ColumnName="OPTDate" />
+                <ScalarProperty Name="OTP" ColumnName="OTP" />
+                <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="CoID" ColumnName="CoID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CatID" ColumnName="CatID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+                <ScalarProperty Name="Lic_ID" ColumnName="Lic_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendor_Master">
+            <EntityTypeMapping TypeName="ChatModel.Vendor_Master">
+              <MappingFragment StoreEntitySet="Vendor_Master">
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="V_Name" ColumnName="V_Name" />
+                <ScalarProperty Name="VOAddress" ColumnName="VOAddress" />
+                <ScalarProperty Name="VOGLId" ColumnName="VOGLId" />
+                <ScalarProperty Name="VOPinCode" ColumnName="VOPinCode" />
+                <ScalarProperty Name="VOPhone1" ColumnName="VOPhone1" />
+                <ScalarProperty Name="VOPhone2" ColumnName="VOPhone2" />
+                <ScalarProperty Name="VFAddress" ColumnName="VFAddress" />
+                <ScalarProperty Name="VFGLId" ColumnName="VFGLId" />
+                <ScalarProperty Name="VFPinCode" ColumnName="VFPinCode" />
+                <ScalarProperty Name="VFPhone1" ColumnName="VFPhone1" />
+                <ScalarProperty Name="VFPhone2" ColumnName="VFPhone2" />
+                <ScalarProperty Name="VBankName" ColumnName="VBankName" />
+                <ScalarProperty Name="VBankIFSC" ColumnName="VBankIFSC" />
+                <ScalarProperty Name="VBankBranch" ColumnName="VBankBranch" />
+                <ScalarProperty Name="VBankAcNo" ColumnName="VBankAcNo" />
+                <ScalarProperty Name="VEMailId" ColumnName="VEMailId" />
+                <ScalarProperty Name="VContactPerson" ColumnName="VContactPerson" />
+                <ScalarProperty Name="VCDOB" ColumnName="VCDOB" />
+                <ScalarProperty Name="VCMobile" ColumnName="VCMobile" />
+                <ScalarProperty Name="VSrTaxNo" ColumnName="VSrTaxNo" />
+                <ScalarProperty Name="VSrTaxDate" ColumnName="VSrTaxDate" />
+                <ScalarProperty Name="VStNo" ColumnName="VStNo" />
+                <ScalarProperty Name="VStDate" ColumnName="VStDate" />
+                <ScalarProperty Name="VCstNo" ColumnName="VCstNo" />
+                <ScalarProperty Name="VCstDate" ColumnName="VCstDate" />
+                <ScalarProperty Name="VRegNo" ColumnName="VRegNo" />
+                <ScalarProperty Name="VRegDate" ColumnName="VRegDate" />
+                <ScalarProperty Name="VPanNo" ColumnName="VPanNo" />
+                <ScalarProperty Name="VPanDate" ColumnName="VPanDate" />
+                <ScalarProperty Name="VatNo" ColumnName="VatNo" />
+                <ScalarProperty Name="VatDate" ColumnName="VatDate" />
+                <ScalarProperty Name="VCrLimit" ColumnName="VCrLimit" />
+                <ScalarProperty Name="VCrDays" ColumnName="VCrDays" />
+                <ScalarProperty Name="VStatus" ColumnName="VStatus" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Advertisement" FunctionName="ChatModel.Store.Advertisement">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ChatModel.Advertisement_Result">
+                <ScalarProperty Name="Ad_Cat_Id" ColumnName="Ad_Cat_Id" />
+                <ScalarProperty Name="Ad_Cat_Name" ColumnName="Ad_Cat_Name" />
+                <ScalarProperty Name="Ad_Cat_Reason" ColumnName="Ad_Cat_Reason" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Depatment" FunctionName="ChatModel.Store.Depatment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ChatModel.Depatment_Result">
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="Datemodify" ColumnName="Datemodify" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_UserCatergory1" FunctionName="ChatModel.Store.sp_A_UserCatergory1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ChatModel.sp_A_UserCatergory1_Result">
+                <ScalarProperty Name="CoId" ColumnName="CoId" />
+                <ScalarProperty Name="UCatID" ColumnName="UCatID" />
+                <ScalarProperty Name="UCatName" ColumnName="UCatName" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_AdminUserMaster" FunctionName="ChatModel.Store.Sp_AdminUserMaster">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ChatModel.Sp_AdminUserMaster_Result">
+                <ScalarProperty Name="UCatName" ColumnName="UCatName" />
+                <ScalarProperty Name="CoID" ColumnName="CoID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CatID" ColumnName="CatID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+                <ScalarProperty Name="Lic_ID" ColumnName="Lic_ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UserMaster" FunctionName="ChatModel.Store.UserMaster">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ChatModel.UserMaster_Result">
+                <ScalarProperty Name="CoID" ColumnName="CoID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CatID" ColumnName="CatID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="UserMode" ColumnName="UserMode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Dttm" ColumnName="Dttm" />
+                <ScalarProperty Name="ChkSum" ColumnName="ChkSum" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
+                <ScalarProperty Name="Lic_ID" ColumnName="Lic_ID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

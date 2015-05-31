@@ -28,5 +28,12 @@ namespace Chat.Service.Entity
         public string ChkSum { get; set; }
         public Nullable<int> UsID { get; set; }
         public Nullable<int> Lic_ID { get; set; }
+        public string Phone { get; set; }
+        public Nullable<int> PhoneType { get; set; }
+        public string OTP { get; set; }
+        public Nullable<System.DateTime> OPTDate { get; set; }
+        public Nullable<int> OTPStatus { get; set; }
+        public Nullable<int> DeptID { get; set; }
+        public Nullable<System.DateTime> DOB { get; set; }
     }
 }

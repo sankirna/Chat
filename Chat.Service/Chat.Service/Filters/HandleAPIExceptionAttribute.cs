@@ -15,7 +15,7 @@ namespace Chat.Service.Filters
 
             HttpStatusCode status = HttpStatusCode.OK;
 
-            FailureResponse failureResponse = new FailureResponse(ErrorCode.ERROR100,"Server getting error ");
+            FailureResponse failureResponse = new FailureResponse(ErrorCode.ERROR100, context.Exception.ToString());
             ServiceResponse<FailureResponse> serviceResponse = new ServiceResponse<FailureResponse>(failureResponse, false);
 
             // create a new response and attach our ApiError object

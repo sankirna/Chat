@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ChatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ChatModelStoreContainer">
           <EntitySet Name="Advertise" EntityType="ChatModel.Store.Advertise" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Advertisement_Cat" EntityType="ChatModel.Store.Advertisement_Cat" store:Type="Tables" Schema="dbo" />
@@ -178,7 +178,7 @@
           <Key>
             <PropertyRef Name="GrpMemtabid" />
           </Key>
-          <Property Name="GrpMemtabid" Type="int" Nullable="false" />
+          <Property Name="GrpMemtabid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="GrpID" Type="int" />
           <Property Name="GrpMemid" Type="int" />
           <Property Name="Status" Type="int" />
@@ -359,7 +359,7 @@
           <Property Name="Password" Type="varchar" MaxLength="100" />
           <Property Name="CatID" Type="int" />
           <Property Name="Email" Type="varchar(max)" />
-          <Property Name="MobileNo" Type="varchar" MaxLength="10" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="100" />
           <Property Name="EmpID" Type="int" />
           <Property Name="UserMode" Type="varchar" MaxLength="20" />
           <Property Name="Status" Type="varchar" MaxLength="1" />
@@ -367,6 +367,13 @@
           <Property Name="ChkSum" Type="varchar" MaxLength="100" />
           <Property Name="UsID" Type="int" />
           <Property Name="Lic_ID" Type="int" />
+          <Property Name="Phone" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneType" Type="int" />
+          <Property Name="OTP" Type="varchar" MaxLength="100" />
+          <Property Name="OPTDate" Type="datetime" />
+          <Property Name="OTPStatus" Type="int" />
+          <Property Name="DeptID" Type="int" />
+          <Property Name="DOB" Type="datetime" />
         </EntityType>
         <EntityType Name="Vendor_Master">
           <Key>
@@ -500,8 +507,7 @@
           <Parameter Name="UsID" Type="int" Mode="In" />
           <Parameter Name="OP" Type="int" Mode="In" />
         </Function>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ChatModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -948,7 +954,7 @@
           <Property Name="Password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CatID" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="MobileNo" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EmpID" Type="Int32" />
           <Property Name="UserMode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="Status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
@@ -956,6 +962,13 @@
           <Property Name="ChkSum" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="UsID" Type="Int32" />
           <Property Name="Lic_ID" Type="Int32" />
+          <Property Type="String" Name="Phone" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PhoneType" />
+          <Property Type="String" Name="OTP" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="OPTDate" Precision="3" />
+          <Property Type="Int32" Name="OTPStatus" />
+          <Property Type="Int32" Name="DeptID" />
+          <Property Type="DateTime" Name="DOB" Precision="3" />
         </EntityType>
         <EntityType Name="Vendor_Master">
           <Key>
@@ -1414,6 +1427,13 @@
           <EntitySetMapping Name="User_Master">
             <EntityTypeMapping TypeName="ChatModel.User_Master">
               <MappingFragment StoreEntitySet="User_Master">
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="OTPStatus" ColumnName="OTPStatus" />
+                <ScalarProperty Name="OPTDate" ColumnName="OPTDate" />
+                <ScalarProperty Name="OTP" ColumnName="OTP" />
+                <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="CoID" ColumnName="CoID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
